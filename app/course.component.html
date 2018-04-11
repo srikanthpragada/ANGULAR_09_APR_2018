@@ -1,0 +1,11 @@
+<h1>{{name}}</h1>
+{{desc}}
+
+<h2>Important Topics</h2>
+<ul>
+    <li *ngFor="let topic of topics"> {{ topic }} </li>
+</ul>
+
+Topic : <input type="text" #topic>
+<button (click)="addTopic(topic.value)">Add</button>
+{{message}}

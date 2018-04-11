@@ -3,3 +3,4 @@
 /assets/*.*
 /environments/*.*
 /**/*.js
+upload.bat
