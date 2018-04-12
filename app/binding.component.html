@@ -1,0 +1,20 @@
+
+ <!-- property binding -->
+<h1 [innerHTML]="message"></h1>
+<input type="text" [value]="message" /> 
+<p></p>
+ <!-- attribute binding-->
+<input [attr.type]="ttype" /> 
+ <!-- event binding -->
+<button (click)="toggle()">Toggle</button> 
+
+<!-- class binidng -->
+<h2 [class.bright]="isMorning">Angular 6</h2>
+<!-- style binidng -->
+<a href="discount.html" [style.visibility]="isMorning ? 'Visible' : 'hidden'">Avail Discount</a>
+
+
+
+
+
+
