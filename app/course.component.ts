@@ -27,6 +27,8 @@ export class CourseComponent {
     }
 
     deleteTopic(topic : string) {
+        if (!confirm('Do you want to delete!'))
+         return; 
         // console.log(topic);
         var pos = this.topics.indexOf(topic)
         this.topics.splice(pos,1)   // Delete topic by index 

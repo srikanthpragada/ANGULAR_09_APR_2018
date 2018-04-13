@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <style>
+        .bright {
+            color: red;
+        }
+
+        .big {
+            font-size: 30pt;
+        }
+    </style>
+</head>
+<h1>Directives Demo</h1>
+
+<input type="checkbox" #bright (click)="1==1">Bright
+<input type="checkbox" #big (click)="1==1">Big
+
+<div [ngClass]="{'bright': bright.checked, 'big' :  big.checked}">This is to test!</div>
+
+<p></p>
+<input type="checkbox" #isold  (click)="1==1">Old Student?
+<p></p>
+
+<div *ngIf="isold.checked; then old;else notold"></div>
+
+<ng-template #old> <div>Discount is 15%</div></ng-template>
+<ng-template #notold> <div>Discount is 5%</div></ng-template>
+
+
+<div *ngFor="let num of [10,20,30,40,50]; let i=index;let last=last; let first=first;let oddRow=odd">
+    <hr *ngIf="first" />
+    <span [style.color]="oddRow ? 'red' : 'blue'">{{i+ 1}} -{{num}} </span> 
+    <hr *ngIf="last" />
+</div>
+</html>
