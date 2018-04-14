@@ -1,24 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CourseComponent } from './course.component';
-import { BindingComponent } from './binding.component';
-import { DirectivesComponent } from './directives.component';
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
-import { BracketsPipe } from './pipes/brackets.pipe';
-
+import { ConvertComponent } from './service/convert.component';
+import { ConvertService } from './service/convert.service';
 
 @NgModule({
   declarations: [
-     BindingComponent, 
-     CourseComponent, 
-     DirectivesComponent,
-     PipesDemoComponent,
-     BracketsPipe
+       ConvertComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [PipesDemoComponent]
+  providers: [ConvertService ],
+  bootstrap: [ConvertComponent]
 })
 export class AppModule { }
