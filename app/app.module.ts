@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { ConvertComponent } from './service/convert.component';
-import { ConvertService } from './service/convert.service';
+import { LoginComponent } from './forms/login.component';
 
 @NgModule({
   declarations: [
-       ConvertComponent
+       LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
-  providers: [ConvertService ],
-  bootstrap: [ConvertComponent]
+  providers: [ ],
+  bootstrap: [LoginComponent]
 })
 export class AppModule { }
