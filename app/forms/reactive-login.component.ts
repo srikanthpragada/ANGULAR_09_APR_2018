@@ -16,7 +16,7 @@ export class ReactiveLoginComponent {
        if (control.value.indexOf("*") >= 0)
          return null;  // valid so return null 
        else
-         return { mustHaveStar : true }; // invalid so return an object 
+         return { mustHaveStar : true, currentValue : control.value }; // invalid so return an object 
     }
     // FormGroup validator to ensure password is not same as username 
     matchUsernamePassword(g : FormGroup) {
@@ -31,9 +31,12 @@ export class ReactiveLoginComponent {
 
     ngOnInit() { 
        this.username = new FormControl("", 
-                    [Validators.required, Validators.pattern("[a-zA-Z0-9*]+")]) ;
+                    [Validators.required, 
+                     Validators.pattern("[a-zA-Z]+")]) ;
        this.password = new FormControl("",
-                    [Validators.required, this.mustHaveStar ]);
+                    [Validators.required
+                    //  , this.mustHaveStar
+                     ]);
 
        this.loginForm = new FormGroup(
          { 

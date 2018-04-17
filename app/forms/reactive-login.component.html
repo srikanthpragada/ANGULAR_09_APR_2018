@@ -1,4 +1,4 @@
-<h1>Login </h1>
+<h1>Reactive Login </h1>
 
 <form (ngSubmit)="login()" [formGroup]="loginForm">
     Username <br>
@@ -14,6 +14,8 @@
     <button>Login</button>
     <p></p>
     Username is dirty : {{ loginForm.controls.username.dirty}}
+    <p></p>
+    Password Errors  : {{ loginForm.controls.password.errors | json}}
 
     <h4 *ngIf="loginForm.dirty && loginForm.errors?.match">Password cannot be same as username </h4>
 </form>

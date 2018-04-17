@@ -28,7 +28,8 @@ password <br>
 <input name="autologin" type="checkbox" [(ngModel)]="autologin"/>Auto Login
 <p></p>
 <button [disabled]="loginForm.invalid">Login</button>
-<div>
+<p></p>
+
 Username Valid : {{uname.valid}}
  <br>
 Touched {{loginForm.touched}}
@@ -39,6 +40,5 @@ Form Submitted : {{loginForm.submitted}}
 <p></p>
 pwd.errors : {{pwd.errors | json }}
 <p></p>
- 
-</div>    
+
 </form>
