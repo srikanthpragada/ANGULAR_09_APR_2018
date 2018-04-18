@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from "@angular/common/http"
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './forms/login.component';
-import { ContactsComponent } from './forms/contacts.comonent';
-import { ReactiveLoginComponent } from './forms/reactive-login.component';
+import { WebBooksComponent } from './http/webbooks.component';
+import { HttpGitComponent } from './http/httpgit.component';
+import { BooksService } from './service/books.service';
 
 @NgModule({
   declarations: [
-       ReactiveLoginComponent
+       WebBooksComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule,
+    ReactiveFormsModule, HttpClientModule
   ],
-  providers: [ ],
-  bootstrap: [ReactiveLoginComponent]
+  providers: [ BooksService ],
+  bootstrap: [ WebBooksComponent]
 })
 export class AppModule { }
