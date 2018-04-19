@@ -4,3 +4,4 @@ export class WebBook
     Title : string;
     Price : number;
 }
+

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { WebBook } from './Webbook';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { WebBook } from './WebBook';
+import { HttpClient} from '@angular/common/http'
+import { Response, RequestOptions, Headers } from '@angular/http';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/finally';
-
+ 
 @Component({
     selector : 'add-book',
     templateUrl: 'add-book.component.html'
@@ -13,7 +15,7 @@ export class AddBookComponent {
     done : boolean = false;
     added : boolean = false; 
     
-    constructor(private http: Http) {
+    constructor(private http : HttpClient) {
       this.book = new WebBook();
     }
 
@@ -22,7 +24,6 @@ export class AddBookComponent {
           this.done = false;
           this.added = false; 
           this.http.post("http://test.srikanthpragada.com/api/books",this.book)
-            .map( (resp:Response) => {return resp})
             .finally( () => { this.done = true; } )
             .subscribe(result => this.added = true,
                        error => this.added = false
